@@ -1,0 +1,42 @@
+import pandas as pd
+import numpy as np
+import plotly.graph_objects as go
+
+# Load data
+df = pd.read_csv("GLB.Ts+dSST.csv", skiprows=1)
+df = df[["Year", "J-D"]].dropna()
+df["J-D"] = pd.to_numeric(df["J-D"], errors="coerce")
+df = df[(df["Year"] >= 1924) & (df["Year"] <= 2024)]
+
+years = df["Year"].values
+Z_line = df["J-D"].values
+
+depth_layers = 50  # increase for thicker 3D surface
+Z = np.tile(Z_line, (depth_layers, 1))
+
+X, Y = np.meshgrid(years, np.arange(depth_layers))
+
+fig = go.Figure(data=[
+    go.Surface(
+        x=X,
+        y=Y,
+        z=Z,
+        colorscale="RdBu_r",
+        showscale=True,
+        opacity=0.95
+    )
+])
+
+fig.update_layout(
+    title="3D Global Temperature Anomalies (1924–2024)",
+    width=1100,
+    height=600,
+    scene=dict(
+        xaxis_title="Year",
+        yaxis_title="Depth Layer",
+        zaxis_title="Temperature Anomaly (°C)",
+        camera=dict(eye=dict(x=1.8, y=1.8, z=0.8))  # better 3D angle
+    )
+)
+
+fig.show()
