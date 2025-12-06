@@ -1,117 +1,223 @@
-/* ----------- GLOBAL STYLE ----------- */
+/* ================= COLOR THEME ================= */
+:root {
+    --deep-teal: #5A7D7C;
+    --lavender: #DADFF7;
+    --powder-blue: #A0C1D1;
+    --jet-black: #232C33;
+}
+
+/* ================= RESET ================= */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+/* ================= BODY ================= */
 body {
-    margin: 0;
-    font-family: "Inter", "Segoe UI", Arial, sans-serif;
-    background: linear-gradient(to bottom right, #eef4f7, #dce4eb);
-    color: #222;
-    line-height: 1.6;
+    font-family: "Times New Roman", Times, serif;
+    background: linear-gradient(180deg, var(--lavender), var(--powder-blue));
+    color: var(--jet-black);
+    line-height: 1.9;
+    font-size: 18px;
 }
 
-/* ----------- HEADER ----------- */
-header {
-    background: #1b2b3a;
+/* ================= NAVBAR ================= */
+.navbar {
+    background: var(--deep-teal);
+    padding: 16px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 36px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar a {
     color: white;
-    text-align: center;
-    padding: 50px 20px;
-    box-shadow: 0px 4px 12px rgba(0,0,0,0.25);
-}
-
-header h1 {
-    font-size: 2.8rem;
-    margin: 0;
     font-weight: 700;
-}
-
-.subtitle {
-    font-size: 1.2rem;
-    margin-top: 10px;
-    opacity: 0.9;
-}
-
-.authors {
-    margin-top: 12px;
-    font-size: 1rem;
-    opacity: 0.8;
-}
-
-/* ----------- SECTION HEADINGS ----------- */
-.section-heading {
-    font-size: 1.9rem;
-    margin-top: 40px;
-    margin-bottom: 10px;
-    color: #1b2b3a;
-    border-left: 6px solid #4a90e2;
-    padding-left: 12px;
-}
-
-/* ----------- INTRO SECTION ----------- */
-.intro-section {
-    width: 90%;
-    max-width: 1100px;
-    margin: 40px auto 60px auto;
-    background: white;
-    padding: 30px 40px;
-    border-radius: 14px;
-    border-left: 6px solid #4a90e2;
-    border-right: 6px solid #4a90e2;
-    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
-}
-
-/* ----------- MAIN CARD CONTAINER ----------- */
-.container {
-    width: 90%;
-    max-width: 1100px;
-    margin: auto;
-    padding-bottom: 60px;
-}
-
-/* ----------- VISUALIZATION CARDS ----------- */
-.viz-card {
-    background: white;
-    padding: 28px 35px;
-    margin-bottom: 45px;
-    border-radius: 14px;
-    border-left: 6px solid #5db4ea;
-    border-right: 6px solid #5db4ea;
-    box-shadow: 0px 4px 18px rgba(0,0,0,0.14);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.viz-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0px 8px 30px rgba(0,0,0,0.2);
-}
-
-.viz-title {
-    font-size: 1.6rem;
-    margin-top: 0;
-    color: #163b5d;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-}
-
-/* ----------- IMAGES & IFRAMES ----------- */
-img, iframe {
-    width: 100%;
-    margin-top: 20px;
-    border-radius: 12px;
-    border: 2px solid #cfd8e1;
-}
-
-/* ----------- FOOTER ----------- */
-footer {
-    text-align: center;
-    padding: 30px 20px;
-    background: #1b2b3a;
-    color: white;
-    margin-top: 60px;
-}
-
-footer a {
-    color: #7dc8ff;
+    font-size: 1.15rem;
     text-decoration: none;
 }
 
-footer a:hover {
+.navbar a:hover {
+    color: var(--lavender);
+    border-bottom: 3px solid var(--lavender);
+}
+
+/* ================= PAGE WRAPPER ================= */
+.page-wrapper {
+    width: min(94%, 1300px);
+    margin: 40px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.18);
+}
+
+/* ================= SECTIONS ================= */
+section {
+    border: 3px solid var(--jet-black);
+    border-radius: 28px;
+    padding: 24px;
+    margin-top: 28px;
+    background-color: var(--lavender);
+}
+
+section:first-of-type {
+    margin-top: 12px;
+}
+
+/* ================= HEADINGS ================= */
+h1 {
+    font-size: 3.2rem;
+    color: var(--deep-teal);
+    margin: 0 0 12px 0;
+}
+
+.section-heading {
+    font-size: 2.2rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding-left: 24px;
+    border-left: 8px solid var(--powder-blue);
+}
+
+/* ================= TEXT ================= */
+p {
+    font-size: 1.1rem;
+    margin: 12px 0;
+}
+
+/* ================= GENERAL CARDS ================= */
+.card,
+.viz-card {
+    background: var(--lavender);
+    padding: 24px;
+    margin-top: 16px;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.25s ease;
+}
+
+.card:hover,
+.viz-card:hover {
+    transform: translateY(-2px);
+    background: var(--powder-blue);
+    box-shadow: 0 18px 18px rgba(0,0,0,0.22);
+}
+
+/* ================= VISUALIZATION CONTENT ================= */
+.viz-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 18px;
+    border-radius: 14px;
+}
+
+.viz-card iframe {
+    width: 100%;
+    height: 520px;
+    display: block;
+    margin-top: 18px;
+    border: none;
+    border-radius: 14px;
+}
+
+/* ================= CONTACT & COLLABORATORS ================= */
+.collaborators-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 32px;
+}
+
+/* override .card ONLY inside collaborators */
+.collaborators-grid .card {
+    background: #E1E6FA;
+    padding: 40px 34px;
+    border-radius: 32px;
+    margin-top: 0;
+    min-height: 260px;
+    box-shadow: 0 18px 36px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transform: none;
+}
+
+/* highlighted main card */
+.collaborators-grid .card.primary {
+    background: #AFC9D5;
+}
+
+/* collaborator name */
+.collaborators-grid .card strong {
+    font-size: 1.6rem;
+    color: var(--deep-teal);
+    display: block;
+    margin-bottom: 14px;
+}
+
+/* collaborator text */
+.collaborators-grid .card p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+/* email link */
+.collaborators-grid a {
+    margin-top: auto;
+    font-size: 1.05rem;
+    color: #1a4fd8;
     text-decoration: underline;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    margin-top: 60px;
+    background: var(--deep-teal);
+    color: white;
+    text-align: center;
+    padding: 30px;
+    font-size: 1.05rem;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 900px) {
+    body {
+        font-size: 19px;
+    }
+
+    .page-wrapper {
+        padding: 28px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .section-heading {
+        font-size: 1.9rem;
+    }
+
+    .viz-card iframe {
+        height: 380px;
+    }
+
+    .collaborators-grid {
+        grid-template-columns: 1fr;
+    }
 }

@@ -1,135 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Temperature Change Visualizations (1924–2024)</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Global Temperature Change (1924–2024)</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
-    <h1>Visualizing Global Land–Ocean Temperature Change (1924–2024)</h1>
-    <p class="subtitle">A Century of Climate Warming Through Data</p>
+<!-- NAVBAR -->
+<nav class="navbar">
+<ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#goal">Goal</a></li>
+    <li><a href="#data">Data</a></li>
+    <li><a href="visualizations.html">Visualizations</a></li>
+    <li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
 
-    <p class="authors">By: <strong>Meyhr Kaur</strong>, <strong>Brandon Diaz</strong>, <strong>Deepanshu Bhagria</strong></p>
-</header>
+<!-- PAGE CONTENT -->
+<div class="page-wrapper">
 
-<!-- -------------------------------------- -->
-<!-- INTRO SECTION -->
-<!-- -------------------------------------- -->
-<section class="intro-section">
+<!-- ================= PROJECT OVERVIEW ================= -->
+<section id="overview">
+<h2 class="section-heading">Overview</h2>
 
-    <h2 class="section-heading">Project Overview</h2>
+<h2>Visualizing Global Land–Ocean Temperature Change (1924–2024)</h2>
 
-    <p>
-        Global mean surface temperature is one of the most widely used and trusted indicators of climate change. 
-        From 1924 to 2024, our planet has undergone dramatic shifts in climate conditions — reshaping ecosystems, 
-        weather patterns, and human livelihood. Studying this 100-year window allows us to observe the transition 
-        from early industrial conditions to the rapid warming driven by modern fossil fuel use, industrialization, 
-        and urban expansion.
-    </p>
+<div class="card">
+<p>
+Global mean surface temperature is one of the most widely used and trusted indicators
+of climate change. From 1924 to 2024, our planet has undergone dramatic shifts in climate
+conditions, reshaping ecosystems, weather patterns, and human livelihoods. Studying this
+100-year window allows us to observe the transition from early industrial conditions to
+the rapid warming driven by modern fossil fuel use, industrialization, and urban expansion.
+</p>
 
-    <p>
-        Our goal is to transform abstract climate statistics into meaningful visual evidence. Through data 
-        visualizations, we trace how natural fluctuations evolved into persistent warming trends, and how 
-        historical developments align with measurable temperature changes across land and ocean surfaces. 
-    </p>
-
-    <h2 class="section-heading">Goal of the Project</h2>
-
-    <p>
-        To visualize and analyze global land and ocean surface temperature changes over the past century, 
-        highlighting long-term warming patterns and their connections to historical climate-influencing events.
-    </p>
-
-    <h2 class="section-heading">Data Introduction</h2>
-
-    <p>
-        For this project, we use the <strong>NASA GISTEMP v4</strong> dataset published by the  
-        NASA Goddard Institute for Space Studies (GISS). This dataset provides monthly and annual global 
-        surface temperature anomalies from 1880 to the present. We focus on the most recent 100 years 
-        (1924–2024) to assess how Earth’s climate has shifted across the 20th and 21st centuries.
-    </p>
-
-    <p>
-        Each NASA record includes the year, global temperature anomaly relative to the 1951–1980 baseline, 
-        and separate land/ocean averages. To improve reliability, we also compare against  
-        <strong>NOAA’s Global Temperature (NOAAGlobalTemp)</strong> dataset, which uses a similar structure 
-        with slight methodological differences. Together, these datasets provide a robust and standardized view 
-        of long-term global temperature change.
-    </p>
-</section>
-
-<div class="container">
-
-    <!-- VIS 1 -->
-    <div class="viz-card">
-        <h3 class="viz-title">NASA Temperature Anomalies by Decade (1924–2024)</h3>
-        <p>
-            This bar chart visualizes how the global average temperature anomaly has changed by decade using 
-            NASA’s land–ocean surface temperature index. Early decades—from the 1920s through the 1960s—show 
-            negative or near-zero anomalies, meaning global temperatures were cooler than the 1951–1980 climate baseline. 
-            Beginning in the 1970s, anomalies shift above zero, marking the onset of accelerated warming. After 1980, each 
-            decade becomes noticeably hotter than the one before it, rising from roughly +0.25°C in the 1980s to more than 
-            +1.0°C in the 2020s. This visualization reveals a steady and intensifying warming trend across the century.
-        </p>
-
-        <img src="plots/viz1.png" alt="Visualization 1">
-    </div>
-
-    <!-- VIS 2 -->
-    <div class="viz-card">
-        <h3 class="viz-title">3D “Warming Wall” of Annual Global Temperature Anomalies</h3>
-        <p>
-            This 3D surface visualization represents annual global temperature anomalies from 1924 to 2024. 
-            The X-axis marks each year, and the Z-axis shows the temperature anomaly relative to the 1951–1980 baseline. 
-            Extending these anomalies along the Y-axis creates a “warming wall” effect. The color scale transitions from 
-            blue (cooler-than-average years) to deep red (warmer-than-average years). Early decades are dominated by cool 
-            blues, while recent decades shift into intense reds — with the highest anomalies appearing after 2000. 
-            The 3D perspective makes the century-long warming trend visually striking and easy to interpret.
-        </p>
-
-        <iframe src="plots/viz2.html" height="500"></iframe>
-    </div>
-
-    <!-- VIS 3 -->
-    <div class="viz-card">
-        <h3 class="viz-title">NOAA Global Temperature Anomalies with 10-Year Rolling Average</h3>
-        <p>
-            This visualization displays NOAA global temperature anomaly data over the past century. The light gray line 
-            represents year-to-year variability, showing natural fluctuations. The dark red line is a 10-year rolling average, 
-            which smooths out short-term noise to reveal long-term trends. The smoothed curve shows a clear acceleration in 
-            warming beginning in the late 20th century, corresponding to the rise in greenhouse gas emissions. This chart 
-            emphasizes that global warming is a persistent, long-term trend — not an isolated spike.
-        </p>
-
-        <img src="plots/viz3.png" alt="Visualization 3">
-    </div>
-
-    <!-- VIS 4 -->
-    <div class="viz-card">
-        <h3 class="viz-title">Early vs Modern Warming Era: Distribution Shift (1924–2024)</h3>
-        <p>
-            This distribution comparison divides the data into two 50-year periods using NOAA temperature anomaly data: 
-            1924–1974 and 1975–2024. The earlier distribution (blue) clusters around cooler or negative anomalies, showing 
-            that the planet’s climate was historically cooler relative to the 1951–1980 baseline. The modern distribution 
-            (orange) shifts dramatically to the right, revealing consistently warmer anomalies and a significantly higher mean 
-            temperature. This shift demonstrates that global warming is not just about the hottest individual years — the entire 
-            climate system has moved into a new, warmer state.
-        </p>
-
-        <img src="plots/viz4.png" alt="Visualization 4">
-    </div>
-
+<p>
+Our objective is to transform abstract climate statistics into meaningful visual evidence.
+Through data visualizations, we trace how natural fluctuations evolved into persistent
+warming trends and examine how historical developments align with measurable temperature
+changes across both land and ocean surfaces.
+</p>
 </div>
 
+</section>
+
+<!-- ================= GOAL ================= -->
+<section id="goal">
+<h2 class="section-heading">Goal of the Project</h2>
+
+<div class="card">
+<p>
+The goal of this project is to visualize and analyze global land and ocean surface
+temperature changes over the past century. By highlighting long-term warming patterns,
+we aim to provide context for how modern climate change has developed and how it connects
+to historical climate-influencing events.
+</p>
+</div>
+</section>
+
+<!-- ================= DATA ================= -->
+<section id="data">
+<h2 class="section-heading">Data Introduction</h2>
+
+<div class="card">
+<p>
+For this project, we use the NASA GISTEMP v4 dataset published by the NASA Goddard
+Institute for Space Studies (GISS). This dataset provides monthly and annual global
+surface temperature anomalies from 1880 to the present. Our analysis focuses on the
+most recent 100 years (1924–2024) in order to assess how Earth’s climate has shifted
+throughout the 20th and 21st centuries.
+</p>
+
+<p>
+Each NASA record includes the year, global temperature anomaly relative to the
+1951–1980 baseline, and separate land and ocean averages. To improve reliability
+and reduce dataset-specific bias, we also compare NASA results with NOAA’s Global
+Temperature (NOAAGlobalTemp) dataset. While the two datasets use slightly different
+methodologies, they produce consistent long-term warming trends.
+</p>
+
+<p>
+Together, these datasets offer a robust and standardized view of long-term global
+temperature change, strengthening confidence in the conclusions drawn from our
+visualizations.
+</p>
+</div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact">
+    <h2 class="section-heading">Collaborators & Contact</h2>
+
+    <div class="collaborators-grid">
+        <div class="card">
+            <p>
+                <strong>Deepanshu Bhagria</strong><br>
+                Computer Science student at Northeastern University with interests in data visualization,
+                machine learning, and climate-focused analytics.<br>
+                📧 deepanshu.bhagria@gmail.com
+            </p>
+        </div>
+
+        <div class="card">
+            <p>
+                <strong>Meyhr Kaur</strong><br>
+                Contributor focused on visualization structure, narrative clarity, and interpretation of
+                global climate trends.
+            </p>
+        </div>
+
+        <div class="card">
+            <p>
+                <strong>Brandon Diaz</strong><br>
+                Contributor responsible for data preprocessing, exploratory analysis, and statistical
+                summaries used in the visualizations.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<!-- FOOTER -->
 <footer>
-    <p>© 2025 Global Temperature Change Project</p>
-    <p>For questions or collaboration, contact:  
-       <a href="mailto:deepanshu.bhagria@gmail.com">deepanshu.bhagria@gmail.com</a>
-    </p>
+<p>© 2025 Global Temperature Change Project — DS4200</p>
 </footer>
 
 </body>
