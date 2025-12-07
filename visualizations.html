@@ -14,8 +14,7 @@
     <ul>
         <li><a href="index.html">Overview</a></li>
         <li><a href="index.html#data">Data</a></li>
-        <li><a href="#static">Static Visualizations</a></li>
-        <li><a href="#interactive">Interactive Visualizations</a></li>
+        <li><a href="#visualizations">Visualizations</a></li>
         <li><a href="#conclusion">Conclusions</a></li>
     </ul>
 </nav>
@@ -29,121 +28,126 @@
     <section>
         <p>
         Global mean surface temperature is one of the most widely used and trusted indicators
-        of climate change. From 1924 to 2024, Earth has undergone dramatic shifts in climate
+        of climate change. From 1924 to 2024, Earth has undergone profound shifts in climate
         conditions, reshaping ecosystems, weather patterns, and human livelihoods.
         </p>
 
         <p>
-        The visualizations below transform abstract temperature anomaly data into intuitive
-        visual evidence, illustrating how natural variability evolved into persistent,
-        accelerating global warming.
+        The visualizations below transform global temperature anomaly data into
+        intuitive visual evidence, illustrating how short-term variability evolves into
+        persistent, long-term global warming.
         </p>
     </section>
 
-    <!-- ================= STATIC VISUALIZATIONS ================= -->
-    <section id="static">
-        <h2 class="section-heading">Static Visualizations</h2>
+    <!-- ================= VISUALIZATIONS ================= -->
+    <section id="visualizations">
+        <h2 class="section-heading">Temperature Change Visualizations (1924–2024)</h2>
 
         <!-- VIZ 1 -->
         <div class="viz-card">
-            <h2>NASA Temperature Anomalies by Decade (1924–2024)</h2>
+            <h2>Average Global Temperature Change per Decade (1924–2024)</h2>
 
-            <p><strong>Question: How have global temperature anomalies changed from decade to decade?</strong><br>
+            <p><strong>Question: How have global temperature anomalies changed from decade to decade?</strong></p>
+
+            <p>
+            This bar chart summarizes global average temperature anomalies by decade using
+            NASA’s land–ocean surface temperature index. Early decades show near-zero or
+            negative anomalies relative to the 1951–1980 baseline.
             </p>
 
             <p>
-            This bar chart visualizes changes in global average temperature anomalies
-            using NASA’s land–ocean surface temperature index. Early decades
-            (1920s–1960s) show negative or near-zero anomalies relative to the
-            1951–1980 baseline.
+            Beginning in the 1970s, temperature anomalies rise steadily above zero, with
+            each subsequent decade becoming warmer than the last. This visualization clearly
+            demonstrates the long-term, cumulative nature of global warming.
+            </p>
+
+            <iframe src="plots/Barchart.html"></iframe>
+        </div>
+
+        <!-- VIZ 2 -->
+        <div class="viz-card">
+            <h2>Annual Global Temperature Anomalies (1924–2024)</h2>
+
+            <p><strong>Question: How have global temperature anomalies varied year by year?</strong></p>
+
+            <p>
+            This visualization presents annual global temperature anomalies from NASA’s
+            dataset. Individual years show noticeable variability caused by natural climate
+            processes such as volcanic activity and ocean circulation patterns.
             </p>
 
             <p>
-            Beginning in the 1970s, anomalies shift above zero, marking accelerated
-            warming. Each subsequent decade becomes progressively warmer, rising from
-            about +0.25°C in the 1980s to over +1.0°C in the 2020s, revealing a steady and
-            intensifying warming trend.
+            Despite short-term fluctuations, the long-term upward trend becomes increasingly
+            evident, reinforcing that recent warming is not random variation but part of a
+            sustained global shift.
             </p>
 
-            <!-- STATIC IMAGE -->
-            <img src="plots/viz1.png" alt="NASA Decadal Temperature Anomalies">
+            <iframe src="plots/NASA_annomalies.html"></iframe>
         </div>
 
         <!-- VIZ 3 -->
         <div class="viz-card">
-            <h2>NOAA Global Temperature Anomalies with 10-Year Rolling Average</h2>
+            <h2>NOAA Global Temperature Anomalies (1924–2024)</h2>
 
-            <p><strong>Question: What long-term warming trend emerges after smoothing short-term variability?</strong><br>
+            <p><strong>Question: What long-term trend emerges when smoothing short-term temperature variability?</strong></p>
+
+            <p>
+            This interactive visualization shows NOAA global temperature anomaly data across
+            a full century. Annual values capture short-term variability, while interactive
+            elements allow closer inspection of specific years.
             </p>
 
             <p>
-            This visualization displays NOAA global temperature anomaly data across
-            the past century. The light gray line shows annual variability caused by
-            natural climate processes.
+            The visualization highlights a clear acceleration in warming beginning in the
+            latter half of the 20th century, supporting scientific consensus that modern
+            global warming is persistent and systemic.
             </p>
 
-            <p>
-            The dark red 10-year rolling average smooths short-term noise and highlights
-            long-term trends. The curve shows a clear acceleration in warming beginning
-            in the late 20th century, reinforcing that global warming is persistent
-            rather than an isolated anomaly.
-            </p>
-
-            <!-- STATIC IMAGE -->
-            <img src="plots/viz3.png" alt="NOAA Rolling Average Temperature Anomalies">
+            <iframe src="plots/NOAA_annomalies.html"></iframe>
         </div>
 
         <!-- VIZ 4 -->
         <div class="viz-card">
-            <h2>Early vs. Modern Warming Era: Distribution Shift (1924–2024)</h2>
+            <h2>Distribution of NOAA Temperature Anomalies by Decade</h2>
 
-            <p><strong>Question: How has the overall distribution of temperature anomalies shifted over time?</strong><br>
+            <p><strong>Question: How has the distribution of temperature anomalies shifted over time?</strong></p>
+
+            <p>
+            This boxplot compares the distribution of NOAA temperature anomalies across
+            different decades. Earlier decades are clustered around cooler or near-zero
+            values with relatively limited spread.
             </p>
 
             <p>
-            This visualization compares temperature anomaly distributions for two
-            50-year periods: 1924–1974 and 1975–2024. The earlier distribution clusters
-            around cooler or near-zero anomalies.
+            More recent decades show higher median anomalies and greater variability,
+            indicating that modern warming reflects a shift in the entire temperature
+            distribution rather than changes in isolated extreme years.
             </p>
 
-            <p>
-            The modern distribution shifts substantially toward positive values,
-            indicating a higher mean global temperature. This demonstrates that modern
-            climate change reflects a shift in the entire temperature baseline, not
-            just increases in extreme events.
-            </p>
-
-            <!-- STATIC IMAGE -->
-            <img src="plots/viz4.png" alt="Early vs Modern Warming Distribution">
+            <iframe src="plots/boxplot.html"></iframe>
         </div>
-    </section>
 
-    <!-- ================= INTERACTIVE VISUALIZATIONS ================= -->
-    <section id="interactive">
-        <h2 class="section-heading">Interactive Visualizations</h2>
-
-        <!-- VIZ 2 -->
+        <!-- VIZ 5 -->
         <div class="viz-card">
-            <h2>3D “Warming Wall” of Annual Global Temperature Anomalies</h2>
+            <h2>Berkeley Earth Monthly Temperature Anomalies (1924–2024)</h2>
 
-            <p><strong>Question: How does the intensity of global warming evolve visually across 100 years?</strong><br>
+            <p><strong>Question: How do seasonal temperature patterns change across a century?</strong></p>
+
+            <p>
+            This heatmap visualizes monthly global temperature anomalies over time using
+            Berkeley Earth data. Color intensity reflects anomaly magnitude, revealing
+            both seasonal patterns and long-term warming.
             </p>
 
             <p>
-            This interactive 3D visualization represents annual global temperature
-            anomalies from 1924 to 2024. Color intensity encodes anomaly magnitude
-            relative to the 1951–1980 baseline.
+            The visualization shows that warming is not confined to a particular season—
+            temperature increases appear consistently across months, emphasizing the
+            global and persistent nature of climate change.
             </p>
 
-            <p>
-            Early decades are dominated by cool blues, while recent decades transition
-            into deep reds, with the highest anomalies occurring after 2000. The 3D
-            structure makes the long-term warming trend visually intuitive.
-            </p>
-
-            <!-- INTERACTIVE IFRAME -->
-            <iframe src="plots/viz2.html" title="3D Warming Wall Visualization"></iframe>
+            <iframe src="plots/heatmap.html"></iframe>
         </div>
+
     </section>
 
     <!-- ================= CONCLUSIONS ================= -->
@@ -151,16 +155,16 @@
         <h2 class="section-heading">Visualization-Based Conclusions</h2>
 
         <p>
-        Across both static and interactive visualizations, a consistent story emerges.
-        Static charts establish century-scale warming trends, while interactive views
-        emphasize intensity and acceleration.
+        Taken together, these visualizations reveal a clear and consistent narrative:
+        global temperatures have risen steadily over the past century, with acceleration
+        in recent decades.
         </p>
 
         <p>
-        Together, these visualizations show that global warming is not driven by isolated
-        extreme years. Instead, the entire global temperature distribution has shifted
-        into a persistently warmer state, aligning strongly with scientific consensus on
-        anthropogenic climate change.
+        By combining annual trends, decade-level summaries, distributional comparisons,
+        and seasonal patterns, the evidence strongly supports the conclusion that modern
+        global warming reflects a systemic shift in Earth’s climate rather than isolated
+        natural fluctuations.
         </p>
     </section>
 
