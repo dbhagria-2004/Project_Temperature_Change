@@ -233,3 +233,49 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+/* =========================================================
+   ✅ PER-VISUALIZATION CLASSES (NO SIZE CHANGES YET)
+   These simply EXIST so you can override later if needed.
+   ========================================================= */
+
+.viz-decadal-bar iframe {
+    /* inherits default size */
+    height: 650px;
+    width:  1000px;
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.viz-annual-nasa iframe {
+    height: 600px;
+    width:  1000px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 100px;
+    /* inherits default size */
+}
+
+.viz-noaa-trends iframe {
+     height: 600px;
+    width:  1000px;
+    margin-left: 100px;
+
+    /* inherits default size */
+}
+
+.viz-noaa-boxplot iframe {
+    height: 600px;
+    width:  1000px;
+    margin-left: 50px;
+
+    /* inherits default size */
+}
+
+.viz-berkeley-heatmap iframe {
+    height: 600px;
+    width:  1200px;
+    margin-left: 200px;
+
+    /* inherits default size */
+}
