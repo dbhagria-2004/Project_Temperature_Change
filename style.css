@@ -274,8 +274,5 @@ footer {
 
 .viz-berkeley-heatmap iframe {
     height: 600px;
-    width:  1200px;
-    margin-left: 200px;
-
-    /* inherits default size */
+    width:  850px;    /* inherits default size */
 }

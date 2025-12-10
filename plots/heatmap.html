@@ -1,42 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <style>
-    #vis.vega-embed {
-      width: 100%;
-      display: flex;
-    }
+<meta charset="UTF-8">
+<title>Berkeley Earth Monthly Temperature Anomalies</title>
 
-    #vis.vega-embed details,
-    #vis.vega-embed details summary {
-      position: relative;
-    }
-  </style>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+
+<style>
+body {
+    font-family: "Inter", "Segoe UI", sans-serif;
+    background: #fafafa;
+    color: #232C33;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.tooltip {
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 6px 8px;
+    font-size: 12px;
+    pointer-events: none;
+    opacity: 0;
+}
+</style>
 </head>
+
 <body>
-  <div id="vis"></div>
-  <script>
-    (function(vegaEmbed) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-68427d68d193973d2df6a3eafc4094da"}, "mark": {"type": "rect"}, "encoding": {"color": {"field": "Mean", "scale": {"scheme": "greens"}, "title": "Avg Temp Anomaly (\u00b0C)", "type": "quantitative"}, "tooltip": [{"field": "Decade", "title": "Decade", "type": "ordinal"}, {"field": "Month", "title": "Month", "type": "nominal"}, {"field": "Mean", "format": ".2f", "title": "Avg Anomaly (\u00b0C)", "type": "quantitative"}], "x": {"axis": {"labelAngle": 0}, "field": "Decade", "title": "Decade", "type": "ordinal"}, "y": {"field": "Month", "sort": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"], "title": "Month", "type": "nominal"}}, "height": 500, "title": "Berkeley Earth Monthly Temperature Anomalies by Decade (1924\u20132024)", "width": 750, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-68427d68d193973d2df6a3eafc4094da": [{"Decade": 1920, "Month": "April", "Mean": -0.28939166666666666}, {"Decade": 1920, "Month": "August", "Mean": -0.22599166666666667}, {"Decade": 1920, "Month": "December", "Mean": -0.29995}, {"Decade": 1920, "Month": "February", "Mean": -0.2687}, {"Decade": 1920, "Month": "January", "Mean": -0.21994166666666667}, {"Decade": 1920, "Month": "July", "Mean": -0.26953333333333335}, {"Decade": 1920, "Month": "June", "Mean": -0.30955}, {"Decade": 1920, "Month": "March", "Mean": -0.24750833333333333}, {"Decade": 1920, "Month": "May", "Mean": -0.283125}, {"Decade": 1920, "Month": "November", "Mean": -0.116075}, {"Decade": 1920, "Month": "October", "Mean": -0.17814166666666667}, {"Decade": 1920, "Month": "September", "Mean": -0.21246666666666666}, {"Decade": 1930, "Month": "April", "Mean": -0.18242}, {"Decade": 1930, "Month": "August", "Mean": -0.09906}, {"Decade": 1930, "Month": "December", "Mean": -0.106365}, {"Decade": 1930, "Month": "February", "Mean": -0.140155}, {"Decade": 1930, "Month": "January", "Mean": -0.166715}, {"Decade": 1930, "Month": "July", "Mean": -0.11648499999999999}, {"Decade": 1930, "Month": "June", "Mean": -0.15729500000000002}, {"Decade": 1930, "Month": "March", "Mean": -0.20335999999999999}, {"Decade": 1930, "Month": "May", "Mean": -0.166215}, {"Decade": 1930, "Month": "November", "Mean": -0.06939000000000001}, {"Decade": 1930, "Month": "October", "Mean": -0.038735}, {"Decade": 1930, "Month": "September", "Mean": -0.08887999999999999}, {"Decade": 1940, "Month": "April", "Mean": 0.046895000000000006}, {"Decade": 1940, "Month": "August", "Mean": 0.01372}, {"Decade": 1940, "Month": "December", "Mean": -0.048170000000000004}, {"Decade": 1940, "Month": "February", "Mean": 0.0055}, {"Decade": 1940, "Month": "January", "Mean": 0.06972500000000001}, {"Decade": 1940, "Month": "July", "Mean": 0.01014}, {"Decade": 1940, "Month": "June", "Mean": -0.030675}, {"Decade": 1940, "Month": "March", "Mean": -0.02216}, {"Decade": 1940, "Month": "May", "Mean": 0.031585}, {"Decade": 1940, "Month": "November", "Mean": 0.014950000000000001}, {"Decade": 1940, "Month": "October", "Mean": 0.08012}, {"Decade": 1940, "Month": "September", "Mean": -0.004769999999999997}, {"Decade": 1950, "Month": "April", "Mean": -0.070845}, {"Decade": 1950, "Month": "August", "Mean": -0.03443}, {"Decade": 1950, "Month": "December", "Mean": -0.071065}, {"Decade": 1950, "Month": "February", "Mean": -0.10055499999999999}, {"Decade": 1950, "Month": "January", "Mean": -0.05931500000000001}, {"Decade": 1950, "Month": "July", "Mean": -0.05031}, {"Decade": 1950, "Month": "June", "Mean": -0.04479}, {"Decade": 1950, "Month": "March", "Mean": -0.122285}, {"Decade": 1950, "Month": "May", "Mean": -0.059975}, {"Decade": 1950, "Month": "November", "Mean": -0.102485}, {"Decade": 1950, "Month": "October", "Mean": -0.042465}, {"Decade": 1950, "Month": "September", "Mean": -0.050734999999999995}, {"Decade": 1960, "Month": "April", "Mean": -0.110015}, {"Decade": 1960, "Month": "August", "Mean": -0.050665}, {"Decade": 1960, "Month": "December", "Mean": -0.079645}, {"Decade": 1960, "Month": "February", "Mean": -0.073545}, {"Decade": 1960, "Month": "January", "Mean": -0.12062500000000001}, {"Decade": 1960, "Month": "July", "Mean": -0.06149}, {"Decade": 1960, "Month": "June", "Mean": -0.04925}, {"Decade": 1960, "Month": "March", "Mean": -0.111215}, {"Decade": 1960, "Month": "May", "Mean": -0.08691499999999999}, {"Decade": 1960, "Month": "November", "Mean": -0.05671}, {"Decade": 1960, "Month": "October", "Mean": -0.039755}, {"Decade": 1960, "Month": "September", "Mean": -0.06952}, {"Decade": 1970, "Month": "April", "Mean": 0.013735000000000002}, {"Decade": 1970, "Month": "August", "Mean": -0.03204}, {"Decade": 1970, "Month": "December", "Mean": -0.010865}, {"Decade": 1970, "Month": "February", "Mean": -0.041925000000000004}, {"Decade": 1970, "Month": "January", "Mean": -0.014214999999999997}, {"Decade": 1970, "Month": "July", "Mean": -0.020495000000000003}, {"Decade": 1970, "Month": "June", "Mean": -0.013539999999999996}, {"Decade": 1970, "Month": "March", "Mean": -0.008845}, {"Decade": 1970, "Month": "May", "Mean": -0.001900000000000001}, {"Decade": 1970, "Month": "November", "Mean": -0.00583}, {"Decade": 1970, "Month": "October", "Mean": -0.035625}, {"Decade": 1970, "Month": "September", "Mean": -0.004270000000000005}, {"Decade": 1980, "Month": "April", "Mean": 0.19163}, {"Decade": 1980, "Month": "August", "Mean": 0.206765}, {"Decade": 1980, "Month": "December", "Mean": 0.209185}, {"Decade": 1980, "Month": "February", "Mean": 0.26217}, {"Decade": 1980, "Month": "January", "Mean": 0.262695}, {"Decade": 1980, "Month": "July", "Mean": 0.19218}, {"Decade": 1980, "Month": "June", "Mean": 0.165235}, {"Decade": 1980, "Month": "March", "Mean": 0.23237999999999998}, {"Decade": 1980, "Month": "May", "Mean": 0.21532}, {"Decade": 1980, "Month": "November", "Mean": 0.14035}, {"Decade": 1980, "Month": "October", "Mean": 0.1571}, {"Decade": 1980, "Month": "September", "Mean": 0.19866999999999999}, {"Decade": 1990, "Month": "April", "Mean": 0.38047}, {"Decade": 1990, "Month": "August", "Mean": 0.32326}, {"Decade": 1990, "Month": "December", "Mean": 0.325705}, {"Decade": 1990, "Month": "February", "Mean": 0.45045}, {"Decade": 1990, "Month": "January", "Mean": 0.363985}, {"Decade": 1990, "Month": "July", "Mean": 0.3508}, {"Decade": 1990, "Month": "June", "Mean": 0.38117999999999996}, {"Decade": 1990, "Month": "March", "Mean": 0.40441000000000005}, {"Decade": 1990, "Month": "May", "Mean": 0.32385}, {"Decade": 1990, "Month": "November", "Mean": 0.32403}, {"Decade": 1990, "Month": "October", "Mean": 0.320975}, {"Decade": 1990, "Month": "September", "Mean": 0.27117}, {"Decade": 2000, "Month": "April", "Mean": 0.56124}, {"Decade": 2000, "Month": "August", "Mean": 0.5457099999999999}, {"Decade": 2000, "Month": "December", "Mean": 0.535765}, {"Decade": 2000, "Month": "February", "Mean": 0.561195}, {"Decade": 2000, "Month": "January", "Mean": 0.562465}, {"Decade": 2000, "Month": "July", "Mean": 0.5222249999999999}, {"Decade": 2000, "Month": "June", "Mean": 0.50202}, {"Decade": 2000, "Month": "March", "Mean": 0.60944}, {"Decade": 2000, "Month": "May", "Mean": 0.51195}, {"Decade": 2000, "Month": "November", "Mean": 0.6075}, {"Decade": 2000, "Month": "October", "Mean": 0.569875}, {"Decade": 2000, "Month": "September", "Mean": 0.558975}, {"Decade": 2010, "Month": "April", "Mean": 0.795245}, {"Decade": 2010, "Month": "August", "Mean": 0.7715650000000001}, {"Decade": 2010, "Month": "December", "Mean": 0.7612300000000001}, {"Decade": 2010, "Month": "February", "Mean": 0.779185}, {"Decade": 2010, "Month": "January", "Mean": 0.75722}, {"Decade": 2010, "Month": "July", "Mean": 0.705885}, {"Decade": 2010, "Month": "June", "Mean": 0.70651}, {"Decade": 2010, "Month": "March", "Mean": 0.8561400000000001}, {"Decade": 2010, "Month": "May", "Mean": 0.741665}, {"Decade": 2010, "Month": "November", "Mean": 0.801765}, {"Decade": 2010, "Month": "October", "Mean": 0.816605}, {"Decade": 2010, "Month": "September", "Mean": 0.743915}, {"Decade": 2020, "Month": "April", "Mean": 0.9373333333333334}, {"Decade": 2020, "Month": "August", "Mean": 0.9341375}, {"Decade": 2020, "Month": "December", "Mean": 0.910175}, {"Decade": 2020, "Month": "February", "Mean": 0.9256777777777777}, {"Decade": 2020, "Month": "January", "Mean": 0.915511111111111}, {"Decade": 2020, "Month": "July", "Mean": 0.9573333333333333}, {"Decade": 2020, "Month": "June", "Mean": 0.9237555555555557}, {"Decade": 2020, "Month": "March", "Mean": 1.0462777777777776}, {"Decade": 2020, "Month": "May", "Mean": 0.8779555555555556}, {"Decade": 2020, "Month": "November", "Mean": 1.007025}, {"Decade": 2020, "Month": "October", "Mean": 1.0117}, {"Decade": 2020, "Month": "September", "Mean": 1.0183625}]}};
-      var embedOpt = {"mode": "vega-lite"};
 
-      function showError(el, error){
-          el.innerHTML = ('<div style="color:red;">'
-                          + '<p>JavaScript Error: ' + error.message + '</p>'
-                          + "<p>This usually means there's a typo in your chart specification. "
-                          + "See the javascript console for the full traceback.</p>"
-                          + '</div>');
-          throw error;
-      }
-      const el = document.getElementById('vis');
-      vegaEmbed("#vis", spec, embedOpt)
-        .catch(error => showError(el, error));
-    })(vegaEmbed);
+<h5>Berkeley Earth Monthly Temperature Anomalies by Decade (1924–2024)</h5>
 
-  </script>
+<div id="heatmap"></div>
+<div class="tooltip"></div>
+
+<script src="../js/heatmap.js"></script>
+
 </body>
 </html>
