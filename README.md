@@ -5,8 +5,8 @@ over the past century, highlighting long-term warming trends.
 
 ## Collaborators
 - Deepanshu Bhagria
-- Meyhr Kaur
 - Brandon Diaz
+- Meyhr Kaur
 
 ## Technologies Used
 - HTML, CSS, JavaScript
